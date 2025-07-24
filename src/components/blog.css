@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+.dark-logo {
+    color: #242424;
+    font-size: 2.3rem;
+    font-weight: 900;
+    font-family: "Merriweather", serif;
+    text-transform: capitalize;
+}
+.light-logo {
+    color: #FFFFFF;
+    font-size: 2.3rem;
+    font-weight: 900;
+    font-family: "Merriweather", serif;
+    text-transform: capitalize;
+}
+/* .search-box {
+    display: flex;
+    gap: 0.7rem;
+    position: absolute;
+    left: 15%;
+    background-color: #f9f9f9;
+    padding: 0.8rem;
+    border-radius: 1.7rem;
+} */
+/* .search-box img {
+    width: 2rem;
+    padding-left: 0.4rem;
+} */
+/* input {
+    outline: 0;
+    border: none;
+    background: transparent;
+    font-family: 'Ubuntu', sans-serif;
+} */
+/* .editor {
+    position: absolute;
+    width: 1.5rem;
+    left: 75%;
+}
+.btns {
+    position: absolute;
+    left: 82%;
+    display: flex;
+    gap: 1rem;
+} */
+/* .notification {
+    position: absolute;
+    left: 82%;
+    top: 30%;
+} */
+/* .profile {
+    position: absolute;
+    left: 87%;
+    top: 25%;
+} */
+/* .panel {
+    position: absolute;
+    right: 10rem;
+    top: 5rem;
+    z-index: 50;
+} */
