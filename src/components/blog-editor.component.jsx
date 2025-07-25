@@ -113,7 +113,7 @@ const BlogEditor = () => {
     }
     console.log("Sending blog object:", blogObj);
 
-    axios.post(import.meta.env.VITE_SERVER_DOMAIN + "/create-blog",{...blogObj, id: blog_id},{
+    axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/create-blog`,{...blogObj, id: blog_id},{
         headers: {
           'Authorization':`Bearer ${access_token}`
         }

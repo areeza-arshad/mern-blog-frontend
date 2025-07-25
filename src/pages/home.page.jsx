@@ -30,7 +30,7 @@ const HomePage = () => {
         })
     }
     const fetchTrendingBlogs = () => {
-        axios.get(import.meta.env.VITE_SERVER_DOMAIN + '/trending-blogs')
+        axios.get(`${import.meta.env.VITE_SERVER_DOMAIN}/trending-blogs`)
         .then(({data}) => {
             setTrendingBlog(data.blogs);
         })

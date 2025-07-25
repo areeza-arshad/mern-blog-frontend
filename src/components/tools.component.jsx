@@ -89,7 +89,6 @@ const uploadImageByFile = async (file) => {
 };
 
 const uploadImageByUrl = async (url) => {
-  // Optional: Cloudinary ka fetch API bhi hota hai, lekin file upload zyada reliable hai
   return {
     success: 1,
     file: {
