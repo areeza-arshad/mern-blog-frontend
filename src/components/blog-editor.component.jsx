@@ -40,7 +40,7 @@ const BlogEditor = () => {
 
     try {
       let loadingToast = toast.loading("Uploading...")
-      const res = await axios.post("http://localhost:5000/upload-banner", formData, {
+      const res = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/upload-banner`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
