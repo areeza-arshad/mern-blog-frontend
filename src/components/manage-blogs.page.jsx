@@ -32,7 +32,9 @@ const ManageBlogs = () => {
         .then(async ({data}) => {
             
             let formatedData = await filterPaginationData({state: draft ? drafts : blogs, data, page, user: access_token, countRoute: "/user-written-blogs-count", data_to_send: {draft, query}})
-            formatedData.results = data.blogs;
+            formatedData.results = Array.isArray(data.blogs) ? data.blogs : [];
+            draft ? setDrafts(formatedData) : setBlogs(formatedData);
+            
             if (draft) {
                 setDrafts(formatedData)
             } else {
