@@ -51,7 +51,6 @@ const BlogEditor = () => {
       setBlog({...blog, banner: res.data.url})
       // console.log("Uploaded Image URL:", res.data.url);
     } catch (error) {
-      toast.dismiss(loadingToast);
       return toast.error(error)
     }
   };
