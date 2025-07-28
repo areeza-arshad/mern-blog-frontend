@@ -73,27 +73,60 @@ const BlogEditor = () => {
 
     img.src = theme === 'light' ? light_banner : dark_banner;
   }
+  // const handlePublishEvent = () => {
+  //   if (!banner.length) {
+  //     return toast.error("Please Upload Banner to Publish it.")
+  //   }
+  //   if (!title.length) {
+  //     return toast.error("Please Write Title.")
+  //   }
+  //   if (textEditor.isReady) {
+  //     textEditor.save().then(data => {
+  //       if (data.blocks.length) {
+  //         setBlog({...blog, content:data});
+  //         setEditorState("Publish");
+  //       } else{
+  //         return toast.error("Must write something in blog to publish it..")
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     })
+  //   }
+  // }
   const handlePublishEvent = () => {
-    if (!banner.length) {
-      return toast.error("Please Upload Banner to Publish it.")
-    }
-    if (!title.length) {
-      return toast.error("Please Write Title.")
-    }
-    if (textEditor.isReady) {
-      textEditor.save().then(data => {
+  if (!banner.length) {
+    return toast.error("Please Upload Banner to Publish it.");
+  }
+  if (!title.length) {
+    return toast.error("Please Write Title.");
+  }
+
+  const loadingToast = toast.loading("Publishing...");
+
+  if (textEditor.isReady) {
+    textEditor
+      .save()
+      .then(data => {
         if (data.blocks.length) {
-          setBlog({...blog, content:data});
+          setBlog({ ...blog, content: data });
           setEditorState("Publish");
-        } else{
-          return toast.error("Must write something in blog to publish it..")
+
+          toast.dismiss(loadingToast);
+          toast.success("Ready to publish!");
+        } else {
+          toast.dismiss(loadingToast);
+          return toast.error("Must write something in blog to publish it.");
         }
       })
-      .catch((err) => {
-        console.log(err);
-      })
-    }
+      .catch(err => {
+        toast.dismiss(loadingToast);
+        toast.error("Something went wrong.");
+        console.error(err);
+      });
   }
+};
+
   const handleSaveDraft = (e) => {
 
     if (e.target.className.includes("disable")){
