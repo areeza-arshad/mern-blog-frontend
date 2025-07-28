@@ -120,7 +120,7 @@ const BlogEditor = () => {
         }
       })
       .catch(err => {
-        toast.dismiss(loadingToast);
+        if (loadingToast) toast.dismiss(loadingToast)
         toast.error("Something went wrong.");
         console.error(err);
       });
